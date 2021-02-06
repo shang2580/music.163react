@@ -1,6 +1,6 @@
 
 import *  as actionTypes from "./constants";
-import {getTopBanners} from "@/services/recommend"
+import {getTopBanners,getHotRecommends} from "@/services/recommend"
 
 
 const changeTopBanneraction = (data)=>{
@@ -11,6 +11,13 @@ const changeTopBanneraction = (data)=>{
     }
 }
 
+const  changeHotRecommendaction= (data)=>{
+    
+    return{
+        type:actionTypes.CHANGE_HOT_RECOMMEND,
+        hotRecommend:data
+    }
+}
 
 
 export const getTopBannerAction= ()=>{
@@ -22,5 +29,15 @@ export const getTopBannerAction= ()=>{
         })
         
          
+    }
+}
+
+export const getHotRecommendsAction = (limt)=>{
+    return dispatch=>{
+        //  发送网络请求 
+        getHotRecommends(limt).then(res=>{
+            console.log(res.result)
+             dispatch(changeHotRecommendaction(res.result))
+        })
     }
 }

@@ -44,7 +44,7 @@ export default memo(function Index() {
     },[])
 
    
-    const bgImage =  topBanners[currentIndex] && (topBanners[currentIndex].imageUrl) + "?imageView&blur=40x20";
+    let bgImage =  topBanners[currentIndex] && (topBanners[currentIndex].imageUrl + "?imageView&blur=40x20");
 
     return (
         <BannerWrapper bgImage = {bgImage}>

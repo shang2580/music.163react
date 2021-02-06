@@ -6,7 +6,8 @@ import {Map} from "immutable"
 
 
 const defaultState = Map({
-    Topbanners:[]
+    Topbanners:[],
+    HotRecommends:[]
 })
 
 function reducer(state = defaultState,action){
@@ -17,6 +18,8 @@ function reducer(state = defaultState,action){
 
         //    return {...state,Topbanners:action.topBanners}
         return state.set("Topbanners",action.topBanners)
+        case actionTypes.CHANGE_HOT_RECOMMEND :
+         return   state.set("HotRecommends",action.hotRecommend) 
 
            default: return state;
     }

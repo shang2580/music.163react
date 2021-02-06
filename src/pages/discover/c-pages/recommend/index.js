@@ -1,4 +1,4 @@
-import React, { memo,useEffect} from 'react';
+import React, { memo} from 'react';
 
 
 
@@ -8,9 +8,12 @@ import {
     RecommendLeft,
     RecommendRight
 
-} from "./style.js"
+} from "./style.js";
+//  组件
 import TopBanner  from "./c-cpns/top-banner";
-import Hotrecommend from "./c-cpns/hot-recommend"
+import Hotrecommend from "./c-cpns/hot-recommend";
+import  NewAlbum  from "./c-cpns/new-album/index";
+import RecRanking   from "./c-cpns/recommend-ranking"
 
 
 function Recommend(props) {
@@ -19,9 +22,11 @@ function Recommend(props) {
     return (
         <RecommendWrapper>  
                 <TopBanner></TopBanner>
-                <Content>
+                <Content className = "wrap-v2">
                     <RecommendLeft>
                         <Hotrecommend></Hotrecommend>
+                         <NewAlbum></NewAlbum>
+                         <RecRanking></RecRanking>
                     </RecommendLeft>
                     <RecommendRight></RecommendRight>
                 </Content>
