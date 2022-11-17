@@ -5,7 +5,6 @@ export default memo(function NewAlbum() {
     return (
         <div> 
             <Themehearderrcm   title="新碟上架" ></Themehearderrcm>
-            
         </div>
     )
 })

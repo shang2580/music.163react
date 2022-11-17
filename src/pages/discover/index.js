@@ -10,41 +10,31 @@ import {HeaderLink} from "@/common/local-data.js";
 import {
     DiscoverWrapper,
     TopMenu
-  } from './style';
+} from './style';
 
 
 export default memo(function Discover(props) {
 
     const { route } = props;
-   
     return (
         <DiscoverWrapper>
-
-
             <div className="top">
-                 <TopMenu className = "wrap-v1">
-                         {
-                             HeaderLink.map((item,index)=>{
-                                  
-                                return (
-                                     <div className = "item" key={item.title}>
-                                         <NavLink to = {item.link}>
-                                                 {item.title}
-                                         </NavLink>
-                                     </div>
-                                    
-                                )
-                             })
-                         }
-                     
-                 </TopMenu>
+                <TopMenu className = "wrap-v1">
+                    {
+                        HeaderLink.map((item,index)=>{
+                            return (
+                                <div className = "item" key={item.title}>
+                                    <NavLink to = {item.link}>
+                                        {item.title}
+                                    </NavLink>
+                                </div>
+                                
+                            )
+                        })
+                    }
+                </TopMenu>
             </div>
-                     
-                  {renderRoutes(route.childer)}
-                
-               
-            
+            {renderRoutes(route.childer)}
         </DiscoverWrapper>
     )
 })
- 

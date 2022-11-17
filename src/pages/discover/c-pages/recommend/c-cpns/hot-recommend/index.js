@@ -22,27 +22,20 @@ export default memo(function Hotrecommend() {
       }
     //    shallowEqual 作为第二个参数 浅层比较 提高性能
   },shallowEqual)
-   
-  
 //    网络请求hooks
   useEffect(()=>{
-
     dispatch(getHotRecommendsAction(HOT_RECOMMEND_LIMIT))
-   
-
   },[dispatch])
-
     return (
         <HotrecommendWrapper>
-              <Themehearderrcm keywords={["华语","流行","摇滚","民谣","电子"]}  title="热门推荐" ></Themehearderrcm>
-              <div className = "recommend-list">
-                { Hotrecommends.map((item,index)=>{
-                  return  (
-                    <SongsCover key = {item.id} info={item}></SongsCover>
-                  )
-              })}
-              </div>
-             
+          <Themehearderrcm keywords={["华语","流行","摇滚","民谣","电子"]}  title="热门推荐" ></Themehearderrcm>
+          <div className = "recommend-list">
+            { Hotrecommends.map((item,index)=>{
+              return  (
+                <SongsCover key = {item.id} info={item}></SongsCover>
+              )
+          })}
+          </div>
         </HotrecommendWrapper>
     )
 })
